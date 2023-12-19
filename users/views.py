@@ -4,7 +4,7 @@ from django.http import JsonResponse
 # Create your views here.
 from django.db import connection
 
-def get_quizzes(request, shop):
+def get_quizzes(request, store):
 	"""Gets quizzes linked to a store.
 
     Parameters
@@ -18,7 +18,7 @@ def get_quizzes(request, shop):
     """
 	cursor = connection.cursor()
 	query = '''select quizzes.id from shops, quizzes
-				where shops.id= quizzes.shop and shops.id = ''' + str(shop)
+				where shops.id= quizzes.shop and shops.id = ''' + str(store)
 	cursor.execute(query)
 	rows = cursor.fetchall()
 	cursor.close()

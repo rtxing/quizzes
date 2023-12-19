@@ -19,6 +19,6 @@ from django.urls import path
 from users import views
 
 urlpatterns = [
-path(r"quizzes/<int:shop>/", views.get_quizzes, name="quizzes"),
+path(r"quizzes/<int:store>/", views.get_quizzes, name="quizzes"),
     path('admin/', admin.site.urls),
 ]
